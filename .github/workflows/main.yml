@@ -3,10 +3,10 @@ name: SonarQube Analysis
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   sonarQube:
@@ -40,5 +40,5 @@ jobs:
       run: |
         sonar-scanner \
           -Dsonar.projectKey=your_project_key \
-          -Dsonar.host.url=http://20.205.22.202:9000 \
+          -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
