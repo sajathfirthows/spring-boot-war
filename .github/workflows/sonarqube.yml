@@ -3,7 +3,7 @@ name: SonarQube Integration
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   sonarqube:
